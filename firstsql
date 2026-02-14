@@ -1,0 +1,28 @@
+SELECT @@VERSION AS 'SQL Server Version';
+GO
+
+
+-- create a test database
+CREATE DATABASE DemoDB;
+GO
+
+USE DemoDB;
+GO
+
+-- create a table and insert sample rows
+CREATE TABLE Employees (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100),
+    Role NVARCHAR(100),
+    HireDate DATE
+);
+GO
+
+INSERT INTO Employees (Name, Role, HireDate)
+VALUES ('Armani', 'Data Analyst', '2024-06-01'),
+       ('Ramos', 'Software Engineer', '2023-11-15');
+GO
+
+-- query the table
+SELECT * FROM Employees;
+GO
